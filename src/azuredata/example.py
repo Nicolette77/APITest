@@ -1,10 +1,11 @@
 import base64
-import csv
 import json
+import pprint as pp
+
+import fp as fp
 import pandas as pd
 import requests
 from requests import Response
-import pprint as pp
 
 # API Get(....
 with open('ado_pat.txt', 'r') as file:
@@ -32,26 +33,45 @@ try:
 except requests.exceptions.HTTPError as err:
     pp.pprint(err)
 
+# Read response and write to output.json (Does not write file yet)
 with open('output.json', 'w') as ResponseOutput:
     ResponseOutput.write('output.json')
+    print(ResponseOutput)
 
-
-    # build_data = output['value']
-    print(ResponseOutput['value'][0]['id'])
-    print(ResponseOutput['value'][0]['buildNumber'])
-    print(ResponseOutput['value'][0]['definition']['name'])
-    print(ResponseOutput['value'][0]['startTime'])
-    print(ResponseOutput['value'][0]['finishTime'])
-    # file.write(json.dumps(output.json(), indent=4))
-    # file.close()
-    BuildInfoData = open('BuildInfoData.csv', 'w')
-    csv_writer = csv.writer(open('BuildInfoData.csv', 'w'))
-
-    count = 0
-    for item in ResponseOutput:
-        if count == 0:
-            header = ResponseOutput.keys()
-            csv_writer.writerow(header)
-            count += 1
-    csv_writer.writerow(ResponseOutput.values())
-BuildInfoData.close()
+# BuildInformation_list = []
+#
+# with open('output.json') as BuildInfoCollect:
+#     BuildInfo = json.load(BuildInfoCollect)
+#     for item in BuildInfo:
+#         buildId = item['id']
+#         buildNumber = item['buildNumber']
+#         buildName = item['definition']['name']
+#         startTime = item['startTime']
+#         finishTime = item['finishTime']
+#
+#         BuildInfo = {
+#             'id': buildId,
+#             'buildNumber': buildNumber,
+#             'name': buildName,
+#             'startTime': startTime,
+#             'finishTime': finishTime
+#         }
+#     print(data[0])
+#     print(ResponseOutput['value'][0]['buildNumber'])
+#     print(ResponseOutput['value'][0]['definition']['name'])
+#     print(ResponseOutput['value'][0]['startTime'])
+#     print(ResponseOutput['value'][0]['finishTime'])
+#     file.write(json.dumps(output.json(), indent=4))
+#     file.close()
+#     BuildInformation_list.append(BuildInfo)
+#     BuildInfo = open('BuildInfoData.csv', 'w')
+#     csv_writer = csv.writer(open('BuildInfoData.csv', 'w'))
+#
+#     count = 0
+#     for item in ResponseOutput:
+#         if count == 0:
+#             header = ResponseOutput.keys()
+#             csv_writer.writerow(header)
+#             count += 1
+#     csv_writer.writerow(ResponseOutput.values())
+# BuildInfo.close()
