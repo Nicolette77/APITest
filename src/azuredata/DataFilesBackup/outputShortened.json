@@ -1,0 +1,150 @@
+{
+    "count": 1000,
+    "value": [
+        {
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/atworkiss/85b8db65-9c17-4772-9a09-6d6b169c615f/_apis/build/Builds/12180"
+                },
+                "web": {
+                    "href": "https://dev.azure.com/atworkiss/85b8db65-9c17-4772-9a09-6d6b169c615f/_build/results?buildId=12180"
+                },
+                "sourceVersionDisplayUri": {
+                    "href": "https://dev.azure.com/atworkiss/85b8db65-9c17-4772-9a09-6d6b169c615f/_apis/build/builds/12180/sources"
+                },
+                "timeline": {
+                    "href": "https://dev.azure.com/atworkiss/85b8db65-9c17-4772-9a09-6d6b169c615f/_apis/build/builds/12180/Timeline"
+                },
+                "badge": {
+                    "href": "https://dev.azure.com/atworkiss/85b8db65-9c17-4772-9a09-6d6b169c615f/_apis/build/status/55"
+                }
+            },
+            "properties": {},
+            "tags": [],
+            "validationResults": [],
+            "plans": [
+                {
+                    "planId": "d6bb8e8f-cca1-4bfa-beb4-a407470d6c12"
+                }
+            ],
+            "triggerInfo": {
+                "ci.sourceBranch": "refs/heads/develop",
+                "ci.sourceSha": "a506911bc58cb3521ee6e25e50da732c18e92f09",
+                "ci.message": "Merge branch 'develop' of https://dev.azure.com/atworkiss/AW6/_git/AW6_Gateway into develop",
+                "ci.triggerRepository": "20651a2e-344c-4bf3-adab-960ca3f2bf85"
+            },
+            "id": 12180,
+            "buildNumber": "2022.10.16.1",
+            "status": "inProgress",
+            "queueTime": "2022-10-16T07:25:59.8512588Z",
+            "startTime": "2022-10-16T07:26:09.9927366Z",
+            "url": "https://dev.azure.com/atworkiss/85b8db65-9c17-4772-9a09-6d6b169c615f/_apis/build/Builds/12180",
+            "definition": {
+                "drafts": [],
+                "id": 55,
+                "name": "AW6_Gateway",
+                "url": "https://dev.azure.com/atworkiss/85b8db65-9c17-4772-9a09-6d6b169c615f/_apis/build/Definitions/55?revision=2",
+                "uri": "vstfs:///Build/Definition/55",
+                "path": "\\",
+                "type": "build",
+                "queueStatus": "enabled",
+                "revision": 2,
+                "project": {
+                    "id": "85b8db65-9c17-4772-9a09-6d6b169c615f",
+                    "name": "AW6",
+                    "description": "Atwork 6",
+                    "url": "https://dev.azure.com/atworkiss/_apis/projects/85b8db65-9c17-4772-9a09-6d6b169c615f",
+                    "state": "wellFormed",
+                    "revision": 405991952,
+                    "visibility": "private",
+                    "lastUpdateTime": "2022-09-08T11:46:27.31Z"
+                }
+            },
+            "buildNumberRevision": 1,
+            "project": {
+                "id": "85b8db65-9c17-4772-9a09-6d6b169c615f",
+                "name": "AW6",
+                "description": "Atwork 6",
+                "url": "https://dev.azure.com/atworkiss/_apis/projects/85b8db65-9c17-4772-9a09-6d6b169c615f",
+                "state": "wellFormed",
+                "revision": 405991952,
+                "visibility": "private",
+                "lastUpdateTime": "2022-09-08T11:46:27.31Z"
+            },
+            "uri": "vstfs:///Build/Build/12180",
+            "sourceBranch": "refs/heads/develop",
+            "sourceVersion": "a506911bc58cb3521ee6e25e50da732c18e92f09",
+            "queue": {
+                "id": 115,
+                "name": "Azure Pipelines",
+                "pool": {
+                    "id": 14,
+                    "name": "Azure Pipelines",
+                    "isHosted": true
+                }
+            },
+            "priority": "normal",
+            "reason": "individualCI",
+            "requestedFor": {
+                "displayName": "Marnus Botha",
+                "url": "https://spsprodeus23.vssps.visualstudio.com/Abe601063-1784-45ec-a824-a8e164020b07/_apis/Identities/8302c37c-fd5c-4096-b44e-6d3432b79f1f",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/atworkiss/_apis/GraphProfile/MemberAvatars/aad.ODk3MThiYzQtMTc3MC03ZTM0LTk1YmItMjNmZmVhNmVjMTlm"
+                    }
+                },
+                "id": "8302c37c-fd5c-4096-b44e-6d3432b79f1f",
+                "uniqueName": "Marnus@work.za.com",
+                "imageUrl": "https://dev.azure.com/atworkiss/_apis/GraphProfile/MemberAvatars/aad.ODk3MThiYzQtMTc3MC03ZTM0LTk1YmItMjNmZmVhNmVjMTlm",
+                "descriptor": "aad.ODk3MThiYzQtMTc3MC03ZTM0LTk1YmItMjNmZmVhNmVjMTlm"
+            },
+            "requestedBy": {
+                "displayName": "Microsoft.VisualStudio.Services.TFS",
+                "url": "https://spsprodeus23.vssps.visualstudio.com/Abe601063-1784-45ec-a824-a8e164020b07/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/atworkiss/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                    }
+                },
+                "id": "00000002-0000-8888-8000-000000000000",
+                "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                "imageUrl": "https://dev.azure.com/atworkiss/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+            },
+            "lastChangedDate": "2022-10-16T07:31:55.46Z",
+            "lastChangedBy": {
+                "displayName": "Microsoft.VisualStudio.Services.TFS",
+                "url": "https://spsprodeus23.vssps.visualstudio.com/Abe601063-1784-45ec-a824-a8e164020b07/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/atworkiss/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                    }
+                },
+                "id": "00000002-0000-8888-8000-000000000000",
+                "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                "imageUrl": "https://dev.azure.com/atworkiss/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+            },
+            "orchestrationPlan": {
+                "planId": "d6bb8e8f-cca1-4bfa-beb4-a407470d6c12"
+            },
+            "logs": {
+                "id": 0,
+                "type": "Container",
+                "url": "https://dev.azure.com/atworkiss/85b8db65-9c17-4772-9a09-6d6b169c615f/_apis/build/builds/12180/logs"
+            },
+            "repository": {
+                "id": "20651a2e-344c-4bf3-adab-960ca3f2bf85",
+                "type": "TfsGit",
+                "name": "AW6_Gateway",
+                "url": "https://dev.azure.com/atworkiss/AW6/_git/AW6_Gateway",
+                "clean": null,
+                "checkoutSubmodules": false
+            },
+            "keepForever": false,
+            "retainedByRelease": false,
+            "triggeredByBuild": null,
+            "appendCommitMessageToRunName": true
+        },
+    ]
+}    
