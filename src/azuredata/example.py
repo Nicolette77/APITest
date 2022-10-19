@@ -6,6 +6,7 @@ import requests
 from requests import Response
 import pprint as pp
 
+# API Get(....
 with open('ado_pat.txt', 'r') as file:
     PERSONAL_AUTHENTICATION_TOKEN = file.read().replace('\n', '')
 
@@ -25,35 +26,32 @@ try:
     ADO_RESPONSE: Response = requests.get(
         ORGANIZATION_URL + RESOURCE_PATH, headers=HEADERS)
 
-    # pp.pprint(ADO_RESPONSE)
-    # pp.pprint(ADO_RESPONSE.text)
+    pp.pprint(ADO_RESPONSE)
+    pp.pprint(ADO_RESPONSE.text)
     ADO_RESPONSE.raise_for_status()
 except requests.exceptions.HTTPError as err:
     pp.pprint(err)
 
-# with open('output.json') as file:
-#     for line in file:
-#         print(line.rstrip())
+with open('output.json', 'w') as ResponseOutput:
+    ResponseOutput.write('output.json')
 
-with open('output.json') as output:
-    output = json.load(output)
+
     # build_data = output['value']
-    print(output['value'][0]['id'])
-    print(output['value'][0]['buildNumber'])
-    print(output['value'][0]['definition']['name'])
-    print(output['value'][0]['startTime'])
-    print(output['value'][0]['finishTime'])
+    print(ResponseOutput['value'][0]['id'])
+    print(ResponseOutput['value'][0]['buildNumber'])
+    print(ResponseOutput['value'][0]['definition']['name'])
+    print(ResponseOutput['value'][0]['startTime'])
+    print(ResponseOutput['value'][0]['finishTime'])
     # file.write(json.dumps(output.json(), indent=4))
     # file.close()
     BuildInfoData = open('BuildInfoData.csv', 'w')
     csv_writer = csv.writer(open('BuildInfoData.csv', 'w'))
 
     count = 0
-    for item in output:
+    for item in ResponseOutput:
         if count == 0:
-            header = output.keys()
+            header = ResponseOutput.keys()
             csv_writer.writerow(header)
             count += 1
-    csv_writer.writerow(output.values())
+    csv_writer.writerow(ResponseOutput.values())
 BuildInfoData.close()
-
