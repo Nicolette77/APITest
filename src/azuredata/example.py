@@ -47,6 +47,15 @@ for item in data['value']:
     BuildInfoList.append(BuildInfo_item)
 print(BuildInfoList)
 
-csv_data = BuildInfoList
-out = csv.writer(open('BuildInfoData.csv', 'w'), delimiter=';', quoting=csv.QUOTE_ALL)
-out.writerow(csv_data)
+with open('BuildInfoData.csv', 'w+', newline='') as BuildListInfo:
+    csv_writer = csv.writer(BuildListInfo)
+    count = 0
+    for data['value'] in data:
+        if count == 0:
+            header = data.keys()
+            csv_writer.writerow(header)
+            count += 1
+            lines = data.values()
+            csv_writer.writerow(lines)
+        BuildListInfo.writelines(str(BuildInfoList))
+    BuildListInfo.close()
