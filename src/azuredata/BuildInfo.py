@@ -21,34 +21,22 @@ HEADERS = {
 BuildResponse = requests.get(
         ORGANIZATION_URL + RESOURCE_PATH, headers=HEADERS).json()
 
-with open('buildInfo.json', 'w') as output_file:
-    json.dump(BuildResponse, output_file)
-print(output_file)
+with open('buildDetail.json') as build_file:
+    data = json.load(build_file)
 
-with open('buildInfo.json') as input_file:
-    data = json.load(input_file)
+BuildList = data['value']
 
-BuildInfoList = []
+BuildFile = open('BuildInfoData.csv', 'w')
 
-for item in data['value']:
-    buildId = item['id']
-    buildNumber = item['buildNumber']
-    definitionId = item['definition']['id']
-    definitionName = item['definition']['name']
-    startTime = item['startTime']
-    status = item['status']
+csv_writer = csv.writer(BuildFile)
 
-    BuildInfo_item = {
-        'id': buildId,
-        'buildNumber': buildNumber,
-        'definitionId': definitionId,
-        'definitionName': definitionName,
-        'startTime': startTime,
-        'status': status
-        }
-    BuildInfoList.append(BuildInfo_item)
-print(BuildInfoList)
+count = 0
+for buildItem in BuildList:
+    if count == 0:
+        header = buildItem.keys()
+        csv_writer.writerow(header)
+        count += 1
 
-csv_data = BuildInfoList
-out = csv.writer(open('BuildInfoData.csv', 'w'), delimiter=';', quoting=csv.QUOTE_ALL)
-out.writerow(csv_data)
+    csv_writer.writerow(buildItem.values())
+
+BuildFile.close()
