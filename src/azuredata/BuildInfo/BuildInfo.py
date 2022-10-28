@@ -4,7 +4,7 @@ import requests
 import csv
 
 # API Get(....
-with open('ado_pat.txt', 'r') as file:
+with open('C:/Users/NicolettevandenHeeve/PycharmProjects/APITest/src/azuredata/ado_pat.txt', 'r') as file:
     PERSONAL_AUTHENTICATION_TOKEN = file.read().replace('\n', '')
 
 USERNAME = ""
@@ -13,32 +13,30 @@ B64USERPASS = base64.b64encode(USER_PASS.encode()).decode()
 
 COLLECTION = 'atworkiss'
 PROJECT = 'AW6'
-BUILDNUMBER = '9839'
 ORGANIZATION_URL = f'https://dev.azure.com/{COLLECTION}/{PROJECT}'
-RESOURCE_PATH = f'/_apis/build/builds/{BUILDNUMBER}/workitems?api-version=6.0'
+RESOURCE_PATH = '/_apis/build/builds?api-version=6.0'
 HEADERS = {
     'Authorization': 'Basic %s' % B64USERPASS
 }
-WorkItemResponse = requests.get(
+BuildResponse = requests.get(
         ORGANIZATION_URL + RESOURCE_PATH, headers=HEADERS).json()
 
-with open('workItem.json') as workItem_file:
-    data = json.load(workItem_file)
+with open('buildDetail.json') as build_file:
+    data = json.load(build_file)
 
-WorkItemList = data['value']
+BuildList = data['value']
 
-DetailFile = open('WorkItemData.csv', 'w')
+BuildFile = open('BuildInfoData.csv', 'w')
 
-csv_writer = csv.writer(DetailFile)
-# Counter variables used for writing headers to the csv file
+csv_writer = csv.writer(BuildFile)
+
 count = 0
-for workItemId in WorkItemList:
+for buildItem in BuildList:
     if count == 0:
-        # Writing header to csv
-        header = workItemId.keys()
+        header = buildItem.keys()
         csv_writer.writerow(header)
         count += 1
 
-    csv_writer.writerow(workItemId.values())
+    csv_writer.writerow(buildItem.values())
 
-DetailFile.close()
+BuildFile.close()
